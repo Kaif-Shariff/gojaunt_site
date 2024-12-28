@@ -1,6 +1,7 @@
 import {useState} from "react";
+import {LuSearch} from "react-icons/lu";
 
-export default function SearchControl()  {
+export default function SearchControl() {
     const [location, setLocation] = useState("");
     const [destination, setDestination] = useState("");
     const [date, setDate] = useState("");
@@ -119,8 +120,8 @@ export default function SearchControl()  {
                 {/* Search Button */}
                 <div>
                     <button
-                        className="bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary-dark focus:outline-none">
-                        Find
+                        className="bg-primary text-2xl text-white py-2 px-6 rounded-lg hover:bg-primary-dark focus:outline-none">
+                        <LuSearch/>
                     </button>
                 </div>
             </div>

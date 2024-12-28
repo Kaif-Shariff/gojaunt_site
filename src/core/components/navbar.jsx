@@ -16,7 +16,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Links */}
-                <div className="hidden md:flex space-x-4">
+                <div className="hidden md:flex space-x-14">
                     <NavLink
                         to="/"
                         className={({isActive}) =>
