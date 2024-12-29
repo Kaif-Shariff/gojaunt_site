@@ -38,9 +38,9 @@ const ContactForm = () => {
                     <div className="flex justify-center">
                         <button
                             type="submit"
-                            className="bg-primary text-white mb-10 lg:mb-0 py-2 px-4 w-full rounded-lg hover:bg-primary-dark focus:outline-none"
+                            className="bg-primary text-white lg:mb-0 py-2 px-4 w-full rounded-lg hover:bg-primary-dark focus:outline-none"
                         >
-                            Submit
+                            Get in touch
                         </button>
                     </div>
                 </Form>

@@ -17,36 +17,8 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex space-x-14">
-                    <NavLink
-                        to="/"
-                        className={({isActive}) =>
-                            `text-black font-medium hover:text-primary ${
-                                isActive ? "text-primary" : ""
-                            }`
-                        }
-                    >
-                        Home
-                    </NavLink>
-                    <NavLink
-                        to="/about"
-                        className={({isActive}) =>
-                            `text-black font-medium hover:text-primary ${
-                                isActive ? "text-primary" : ""
-                            }`
-                        }
-                    >
-                        About
-                    </NavLink>
-                    <NavLink
-                        to="/packages"
-                        className={({isActive}) =>
-                            `text-black font-medium hover:text-primary ${
-                                isActive ? "text-primary" : ""
-                            }`
-                        }
-                    >
-                        Packages
-                    </NavLink>
+
+
                     <NavLink
                         to="/contact"
                         className={({isActive}) =>
@@ -108,39 +80,6 @@ const Navbar = () => {
                         </svg>
                     </button>
 
-                    <NavLink
-                        to="/"
-                        className={({isActive}) =>
-                            `text-black font-medium hover:text-primary ${
-                                isActive ? "text-primary" : ""
-                            }`
-                        }
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Home
-                    </NavLink>
-                    <NavLink
-                        to="/about"
-                        className={({isActive}) =>
-                            `text-black font-medium hover:text-primary ${
-                                isActive ? "text-primary" : ""
-                            }`
-                        }
-                        onClick={() => setIsOpen(false)}
-                    >
-                        About
-                    </NavLink>
-                    <NavLink
-                        to="/packages"
-                        className={({isActive}) =>
-                            `text-black font-medium hover:text-primary ${
-                                isActive ? "text-primary" : ""
-                            }`
-                        }
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Packages
-                    </NavLink>
                     <NavLink
                         to="/contact"
                         className={({isActive}) =>
