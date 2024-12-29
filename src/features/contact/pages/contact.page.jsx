@@ -1,7 +1,9 @@
+import FormContainer from "../components/formContainer.jsx";
+
 function ContactPage() {
     return (
         <div>
-            <h1>Contact Us Page</h1>
+            <FormContainer/>
         </div>
     );
 }

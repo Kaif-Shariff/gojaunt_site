@@ -10,6 +10,13 @@ export default {
                 primary: "#3A74FF",
                 secondary: "#FFFFFF",
             },
+            fontFamily: {
+                stardom: ['Stardom', 'sans-serif'],
+                helvetica: ['helvetica', 'sans-serif'],
+                helveticaBold: ['helveticaBold', 'sans-serif'],
+                helveticaItalic: ['helveticaItalic', 'sans-serif'],
+                helveticaLight: ['helveticaLight', 'sans-serif'],
+            }
         },
     },
     plugins: [],
