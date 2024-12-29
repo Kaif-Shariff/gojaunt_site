@@ -1,4 +1,4 @@
-import FormContainer from "../components/formContainer.jsx";
+import FormContainer from "../components/FormContainer.jsx";
 
 function ContactPage() {
     return (
