@@ -1,17 +1,18 @@
-import ContactForm from "./contactForm.jsx";
+import ContactForm from './ContactForm';
 
-function FormContainer() {
+const FormContainer = () => {
     return (
-        <div>
-            <div className="px-4">
-
-                <h1>Get in touch</h1>
-                <h3>Our team would love to hear from you</h3>
-
-                <ContactForm/>
+        <div className="flex flex-col lg:flex-row">
+            <div className="flex-1 px-4">
+                <div>
+                    <h1 className="text-2xl">Get in touch</h1>
+                    <h3 className="text-md lg:text-lg">Our team would love to hear from you</h3>
+                </div>
+                <ContactForm />
             </div>
+            <div className="bg-purple-500 hidden w-[28rem] h-[30rem] lg:flex"></div>
         </div>
     );
-}
+};
 
 export default FormContainer;
