@@ -9,7 +9,7 @@ const Footer = () => {
                 className="container mx-auto flex flex-col sm:flex-row sm:justify-between items-center space-y-4 sm:space-y-0">
                 {/* Left Side */}
                 <div className="text-sm font-semibold text-center sm:text-left">
-                    <p>© {currentYear} GoJaunt Private Limited</p>
+                    <p>© {currentYear} GoJaunt</p>
                 </div>
 
                 {/* Center */}
@@ -25,11 +25,11 @@ const Footer = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="text-sm font-semibold text-center sm:text-right">
+                {/* <div className="text-sm font-semibold text-center sm:text-right">
                     <Link to="https://github.com/Kaif-Shariff">
                         <p>Design & Developed by Kaif Shariff</p>
                     </Link>
-                </div>
+                </div> */}
             </div>
         </footer>
     );
