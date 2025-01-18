@@ -1,4 +1,3 @@
-import SearchControl from "./searchControl.jsx";
 
 export default function LeftSide() {
     return (
@@ -14,7 +13,6 @@ export default function LeftSide() {
                     wonders,</h3>
             </div>
 
-            <SearchControl/>
         </div>
     );
 }

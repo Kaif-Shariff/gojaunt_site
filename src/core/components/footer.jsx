@@ -1,35 +1,94 @@
 import {Link} from "react-router-dom";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear(); // Get the current year
+    const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-primary text-white py-4">
-            <div
-                className="container mx-auto flex flex-col sm:flex-row sm:justify-between items-center space-y-4 sm:space-y-0">
-                {/* Left Side */}
-                <div className="text-sm font-semibold text-center sm:text-left">
-                    <p>© {currentYear} GoJaunt</p>
+        <footer className="">
+            <div className="text-center text-black">
+                <section>
+                    <div className="text-center md:text-left mt-5">
+                        <div className="flex flex-wrap">
+                            <div className="w-full md:w-1/3 lg:w-1/4 xl:w-1/4 mx-auto">
+                                <div className="flex justify-center md:justify-start">
+                                    <Link
+                                        to="/"
+                                        className="text-red-500 text-lg font-bold uppercase no-underline"
+
+                                    >
+                                        <img
+                                            src="logo.svg"
+                                            alt="S1MEDIA"
+                                            className="w-20"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                                <p className="mt-2 text-gray-700">
+                                    Welcome to GoJaunt, your go-to destination for extraordinary adventures and
+                                    immersive travel experiences. Discover the world with us, and let your incredible
+                                    journey commence!
+                                </p>
+                            </div>
+
+                            <div className="w-full md:w-1/3 lg:w-1/4 xl:w-1/4 mx-auto mb-4">
+                                <h6 className="text-lg font-bold uppercase mb-4">Our Service</h6>
+                                <ul>
+                                    <li className="mb-2">
+                                        <Link
+                                            to="/"
+                                            className="text-black hover:text-gray-700"
+
+                                        >
+                                            Plane Ticket Booking
+                                        </Link>
+                                    </li>
+                                    <li className="mb-2">
+                                        <Link
+                                            to="/"
+                                            className="text-black hover:text-gray-700"
+
+                                        >
+                                            Visa
+                                        </Link>
+                                    </li>
+                                    <li className="mb-2">
+                                        <Link
+                                            to="/"
+                                            className="text-black hover:text-gray-700"
+
+                                        >
+                                            Travel Package
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/"
+                                            className="text-black hover:text-gray-700"
+
+                                        >
+                                            Railway Ticket Booking
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div className="w-full md:w-1/3 lg:w-1/4 xl:w-1/4 mx-auto mb-4">
+                                <h6 className="text-lg font-bold uppercase mb-4">Contact</h6>
+                                <p>Shop No.1, 152, Bapu Khote Street</p>
+                                <p>Surthiwala building, Mumbai - 400003</p>
+                                <p>support@gojaunt.in</p>
+                                <p>+91 8123001464</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="text-center p-4">
+                    © Gojaunt, {currentYear}. All rights reserved.
                 </div>
 
-                {/* Center */}
-                <div className="space-y-2 sm:space-x-6 sm:space-y-0 font-semibold lg:flex text-sm text-center">
-                    <Link to="https://kaif-shariff.github.io/gojaunt_privacy/gojaunt_terms.html"
-                          className="block sm:inline">
-                        <p>Terms & Conditions</p>
-                    </Link>
-                    <Link to="https://kaif-shariff.github.io/gojaunt_privacy/gojaunt_terms.html"
-                          className="block sm:inline">
-                        <p>Privacy Policy</p>
-                    </Link>
-                </div>
-
-                {/* Right Side */}
-                {/* <div className="text-sm font-semibold text-center sm:text-right">
-                    <Link to="https://github.com/Kaif-Shariff">
-                        <p>Design & Developed by Kaif Shariff</p>
-                    </Link>
-                </div> */}
             </div>
         </footer>
     );
