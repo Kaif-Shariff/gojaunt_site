@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { testimonials } from "@/data/testimonial.js";
+import {motion} from "framer-motion";
+import {testimonials} from "@/data/testimonial.js";
 
 // Reusable TestimonialCard Component
-const TestimonialCard = ({ testimonial }) => (
+const TestimonialCard = ({testimonial}) => (
     <div className="bg-white p-4 rounded-lg shadow-md">
         <div className="flex items-center gap-4 mb-2">
             <img
@@ -12,7 +12,7 @@ const TestimonialCard = ({ testimonial }) => (
             />
             <div>
                 <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                <p className="text-sm text-gray-600">{testimonial.role}</p>
+                {/*<p className="text-sm text-gray-600">{testimonial.role}</p>*/}
             </div>
         </div>
         <p className="text-gray-700 text-sm">{testimonial.content}</p>
@@ -20,11 +20,11 @@ const TestimonialCard = ({ testimonial }) => (
 );
 
 // Reusable TestimonialColumn Component
-const TestimonialColumn = ({ testimonials, duration, columnKey }) => {
+const TestimonialColumn = ({testimonials, duration, columnKey}) => {
     const animationSettings = {
-        initial: { y: 0 },
-        animate: { y: ["0%", "-100%"] },
-        transition: { duration, repeat: Infinity, ease: "linear" },
+        initial: {y: 0},
+        animate: {y: ["0%", "-100%"]},
+        transition: {duration, repeat: Infinity, ease: "linear"},
     };
 
     return (
@@ -45,7 +45,7 @@ const TestimonialSection = () => {
     return (
         <section className="py-16 bg-gray-100 relative overflow-hidden h-[32rem]">
             <h2 className="text-3xl font-bold text-center mb-12">
-                What Our Customers Says about us
+                Our customer reviews
             </h2>
 
             {/* Responsive Wrapper */}
@@ -84,8 +84,9 @@ const TestimonialSection = () => {
 
                 {/* Cloudy Blur Effect */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-gray-100 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-100 to-transparent" />
+                    <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-gray-100 to-transparent"/>
+                    <div
+                        className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-100 to-transparent"/>
                 </div>
             </div>
         </section>
