@@ -1,4 +1,5 @@
 import {NavLink} from "react-router-dom";
+import {buttonVariants} from "@/components/ui/button.jsx";
 
 const Navbar = () => {
     return (
@@ -14,8 +15,7 @@ const Navbar = () => {
                 <div className="flex space-x-4">
                     <NavLink
                         to="/contact"
-                        className="px-4 py-2 rounded-lg font-medium transition-colors
-                                bg-primary text-white hover:bg-primary-dark"
+                        className={buttonVariants()}
                     >
                         Contact
                     </NavLink>

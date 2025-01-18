@@ -4,14 +4,14 @@ export default function RightSide() {
             <div className="flex flex-row items-start">
                 {/* Left container */}
                 <div
-                    className="w-64 h-[28rem] bg-cover bg-center rounded-[3rem]"
+                    className="w-64 h-[20rem] md:h-[28rem] bg-cover bg-center rounded-[2.5rem] md:rounded-[3rem]"
                     style={{backgroundImage: "url('eifelTower.jpg')"}}
                 >
                 </div>
 
                 {/* Right container */}
                 <div
-                    className="w-64 h-[26rem] bg-cover bg-center rounded-[3rem] mt-28 -ml-10"
+                    className="w-64 h-[18rem] lg:h-[26rem] bg-cover bg-center rounded-[2.5rem] md:rounded-[3rem] mt-[5rem] md:mt-28 -ml-10"
                     style={{backgroundImage: "url('bigBen.jpg')"}}
                 >
                 </div>

@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {email, phone} from "@/core/constant.js";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -78,8 +79,8 @@ const Footer = () => {
                                 <h6 className="text-lg font-bold uppercase mb-4">Contact</h6>
                                 <p>Shop No.1, 152, Bapu Khote Street</p>
                                 <p>Surthiwala building, Mumbai - 400003</p>
-                                <p>support@gojaunt.in</p>
-                                <p>+91 8123001464</p>
+                                <p>{email}</p>
+                                <p>{phone}</p>
                             </div>
                         </div>
                     </div>
