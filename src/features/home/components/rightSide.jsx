@@ -5,7 +5,7 @@ export default function RightSide() {
                 {/* Left container */}
                 <div
                     className="w-64 h-[20rem] md:h-[28rem] bg-cover bg-center rounded-[2.5rem] md:rounded-[3rem]"
-                    style={{backgroundImage: "url('eifelTower.jpg')"}}
+                    style={{backgroundImage: "url('eiffelTower.jpg')"}}
                 >
                 </div>
 

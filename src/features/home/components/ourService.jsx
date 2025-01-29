@@ -1,7 +1,7 @@
 'use client'
 
 import {useState} from 'react'
-import {Plane, StampIcon as Passport, Palmtree, Train, Mail, Phone} from 'lucide-react'
+import {Plane, StampIcon as Passport, Palmtree, Train, Mail, Phone, Bed, CarTaxiFront, Luggage} from 'lucide-react'
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import {
@@ -34,6 +34,21 @@ const services = [
         icon: Train,
         title: 'Railway Ticket Booking',
         description: 'Convenient and comfortable train journeys across the country.',
+    },
+    {
+        icon: Bed,
+        title: 'Hotel Booking',
+        description: 'Curated travel experiences for unforgettable adventures.',
+    },
+    {
+        icon: CarTaxiFront,
+        title: 'Car Rental Service',
+        description: 'Curated travel experiences for unforgettable adventures.',
+    },
+    {
+        icon: Luggage,
+        title: 'Travel Insurance',
+        description: 'Curated travel experiences for unforgettable adventures.',
     },
 ]
 

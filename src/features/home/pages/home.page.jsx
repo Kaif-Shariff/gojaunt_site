@@ -1,7 +1,8 @@
 import LeftSide from "../components/leftSide.jsx";
 import RightSide from "../components/rightSide.jsx";
-import {ServicesSection} from "@/features/home/components/ourService.jsx";
 import TestimonialSection from "@/features/home/components/testimonialSection.jsx";
+import {ServiceSection2} from "@/features/home/components/service.jsx";
+import MyCard from "@/core/components/myCard.jsx";
 
 function HomePage() {
     return (
@@ -11,7 +12,10 @@ function HomePage() {
                 <RightSide/>
             </div>
 
-            <ServicesSection/>
+
+            <MyCard/>
+
+            <ServiceSection2/>
             <TestimonialSection/>
 
         </div>
