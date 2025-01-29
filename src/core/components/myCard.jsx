@@ -1,23 +1,32 @@
-export default function  MyCard() {
+import {Button} from "@/components/ui/button.jsx";
+
+export default function MyCard({ title, location, image }) {
     return (
         <div className="relative w-full max-w-md rounded-2xl shadow-lg overflow-hidden">
             {/* Background Image */}
             <img
-                src="assets/eiffel.jpg"
-                alt="Background"
+                src={image}
+                alt={title}
                 className="w-full h-64 object-cover"
             />
 
-            {/* Stained Glass Effect Card */}
-            <div className="absolute bottom-5 left-5 right-5 p-5 rounded-lg backdrop-blur-sm bg-white/30 border border-white/20 shadow-md">
-                {/* Stained Glass Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#A8A8A9] via-[#6EBFF4]/30 to-[B7C0C9]/0 rounded-lg mix-blend-overlay"></div>
+            {/* Stained Glass Effect */}
+            <div
+                className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800/50 to-transparent mix-blend-multiply"/>
 
-                {/* Content */}
-                <h2 className="text-xl font-bold text-white drop-shadow-md">Eiffel Tower</h2>
-                <p className="text-sm text-white/80 drop-shadow-md">Enquire</p>
-                <p className="text-sm text-white/80 drop-shadow-md">Paris, France</p>
+            {/* Overlay Content */}
+            <div
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 to-transparent p-4 flex justify-between items-center">
+                <div>
+                    <h2 className="text-white text-lg font-semibold">{title}</h2>
+                    <p className="text-gray-300 text-sm">{location}</p>
+                </div>
+                <Button
+                    className="px-4 py-2 border border-white text-white font-medium rounded-lg bg-transparent hover:bg-white hover:text-gray-900 transition"
+                >
+                    Enquire
+                </Button>
             </div>
         </div>
     );
-};
+}

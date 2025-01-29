@@ -18,8 +18,8 @@ const Footer = () => {
 
                                     >
                                         <img
-                                            src="logo.svg"
-                                            alt="S1MEDIA"
+                                            src="assets/logo.svg"
+                                            alt="Gojaunt"
                                             className="w-20"
                                             loading="lazy"
                                         />
