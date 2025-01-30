@@ -58,7 +58,9 @@ export function ServicesSection() {
     return (
         <section className="py-16">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+                <h1 className="text-3xl sm:text-6xl font-semibold text-black text-left mb-8">
+                    Tailored Travel Solutions <br/> for Every Adventure
+                </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service, index) => (
                         <Card key={index} className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
