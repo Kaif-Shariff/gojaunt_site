@@ -1,7 +1,5 @@
-'use client'
-
 import {useState} from 'react'
-import {Plane, StampIcon as Passport, Palmtree, Train, Mail, Phone, Bed, CarTaxiFront, Luggage} from 'lucide-react'
+import {Mail, Phone} from 'lucide-react'
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import {
@@ -10,54 +8,18 @@ import {
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
+    DialogTrigger
 } from "@/components/ui/dialog"
 import {email, phone} from "@/core/constant.js";
+import {services} from "@/data/services.js";
 
-const services = [
-    {
-        icon: Plane,
-        title: 'Plane Ticket Booking',
-        description: 'Find the best deals on flights to your dream destinations.',
-    },
-    {
-        icon: Passport,
-        title: 'Visa Services',
-        description: 'Hassle-free visa application process for your international travels.',
-    },
-    {
-        icon: Palmtree,
-        title: 'Travel Packages',
-        description: 'Curated travel experiences for unforgettable adventures.',
-    },
-    {
-        icon: Train,
-        title: 'Railway Ticket Booking',
-        description: 'Convenient and comfortable train journeys across the country.',
-    },
-    {
-        icon: Bed,
-        title: 'Hotel Booking',
-        description: 'Curated travel experiences for unforgettable adventures.',
-    },
-    {
-        icon: CarTaxiFront,
-        title: 'Car Rental Service',
-        description: 'Curated travel experiences for unforgettable adventures.',
-    },
-    {
-        icon: Luggage,
-        title: 'Travel Insurance',
-        description: 'Curated travel experiences for unforgettable adventures.',
-    },
-]
 
 export function ServicesSection() {
     const [isContactOpen, setIsContactOpen] = useState(false)
 
     return (
         <section className="py-16">
-            <div className="container mx-auto px-4">
+            <div className="container mx-4">
                 <h1 className="text-3xl sm:text-6xl font-semibold text-black text-left mb-8">
                     Tailored Travel Solutions <br/> for Every Adventure
                 </h1>

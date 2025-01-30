@@ -1,11 +1,12 @@
 import {Button} from "@/components/ui/button.jsx";
 import {MapPin} from 'lucide-react';
+import OptimizedImage from "@/core/components/optimizeimage.jsx";
 
 export default function MyCard({title, location, image}) {
     return (
         <div className="relative w-80 h-52 md:w-[28rem] md:h-80 max-w-md rounded-2xl shadow-lg overflow-hidden">
             {/* Background Image */}
-            <img
+            <OptimizedImage
                 src={image}
                 alt={title}
                 className="w-full object-cover"

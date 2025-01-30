@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
+import {cn} from "@/lib/utils";
 
-export function FeatureHoverCard({ title, description, icon: Icon, className }) {
+export function FeatureHoverCard({title, description, icon: Icon, className}) {
     return (
         <div
             className={cn(
@@ -9,7 +9,7 @@ export function FeatureHoverCard({ title, description, icon: Icon, className }) 
             )}
         >
             <div className="relative z-10 mb-4 px-10">
-                <Icon size={24} className="text-primary" />
+                <Icon size={24} className="text-primary"/>
             </div>
             <div className="relative z-10 mb-2 px-10 text-lg font-bold">
                 <div
