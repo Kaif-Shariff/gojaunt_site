@@ -3,7 +3,7 @@ import {MapPin} from 'lucide-react';
 
 export default function MyCard({title, location, image}) {
     return (
-        <div className="relative w-72 h-52 md:w-[28rem] md:h-80 max-w-md rounded-2xl shadow-lg overflow-hidden">
+        <div className="relative w-80 h-52 md:w-[28rem] md:h-80 max-w-md rounded-2xl shadow-lg overflow-hidden">
             {/* Background Image */}
             <img
                 src={image}

@@ -37,18 +37,18 @@ export default function ExploreSection() {
                     Dive Into The Beauty<br/>Of The World
                 </h1>
 
-                <div className="flex gap-12 sm:gap-48">
+                <div className="flex gap-12">
                     <button
-                        className="bg-gray-200 text-black rounded-full hover:bg-gray-300 p-2"
+                        className=" text-black rounded-full hover:bg-[#3A74FF] hover:text-white p-2"
                         onClick={handlePrev}
                     >
-                        <ChevronLeft/>
+                        <ChevronLeft size={40} />
                     </button>
                     <button
-                        className="bg-gray-200 text-black rounded-full hover:bg-gray-300 p-2"
+                        className="bg-[#3A74FF] text-white rounded-full p-2"
                         onClick={handleNext}
                     >
-                        <ChevronRight/>
+                        <ChevronRight size={40}/>
                     </button>
                 </div>
             </div>
@@ -57,16 +57,16 @@ export default function ExploreSection() {
             <div className="relative w-full overflow-hidden">
                 {/* Fade effect on the sides */}
                 <div
-                    className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-white to-transparent pointer-events-none hidden sm:block z-10"/>
+                    className="absolute top-0 left-0 w-52 h-full bg-gradient-to-r from-white to-transparent pointer-events-none hidden sm:block z-10"/>
                 <div
-                    className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white to-transparent pointer-events-none hidden sm:block z-10"/>
+                    className="absolute top-0 right-0 w-52 h-full bg-gradient-to-l from-white to-transparent pointer-events-none hidden sm:block z-10"/>
 
                 {/* Embla Carousel */}
                 <div className="embla" ref={emblaRef}>
                     <div className="embla__container">
                         {destinations.map((item, index) => (
                             <div className="embla__slide" key={index}>
-                                <div className="mx-2">
+                                <div>
                                     <MyCard title={item.title} location={item.location} image={item.image}/>
                                 </div>
                             </div>
