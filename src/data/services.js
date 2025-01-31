@@ -1,39 +1,45 @@
-import {Bed, CarTaxiFront, Luggage, Palmtree, Plane, StampIcon as Passport, Train} from "lucide-react";
-
 export const services = [
     {
-        icon: Plane,
+        id: 1,
+        image: "assets/plane.png",
         title: 'Plane Ticket Booking',
-        description: 'Find the best deals on flights to your dream destinations.',
+        description: 'Seamless flight bookings at competitive rates',
     },
     {
-        icon: Passport,
-        title: 'Visa Services',
-        description: 'Hassle-free visa application process for your international travels.',
-    },
-    {
-        icon: Palmtree,
-        title: 'Travel Packages',
-        description: 'Curated travel experiences for unforgettable adventures.',
-    },
-    {
-        icon: Train,
+        id: 2,
+        image: "assets/train.png",
         title: 'Railway Ticket Booking',
-        description: 'Convenient and comfortable train journeys across the country.',
+        description: 'Easy booking for hassle-free train travel.',
     },
     {
-        icon: Bed,
-        title: 'Hotel Booking',
-        description: 'Curated travel experiences for unforgettable adventures.',
+        id: 3,
+        image: "assets/visa.png",
+        title: 'Visa Services',
+        description: 'Streamlined visa assistance for stress-free travel.',
     },
     {
-        icon: CarTaxiFront,
+        id: 4,
+        image: "assets/island.png",
+        title: 'Travel Packages',
+        description: 'Tailored Tours for Every Traveler',
+    },
+    {
+        id: 5,
+        image: "assets/taxi.png",
         title: 'Car Rental Service',
-        description: 'Curated travel experiences for unforgettable adventures.',
+        description: 'Affordable car rentals for carefree exploration',
     },
     {
-        icon: Luggage,
+        id: 6,
+        image: "assets/hotel.png",
+        title: 'Hotel Booking',
+        description: 'Find accommodations that suit your style and budget',
+    },
+
+    {
+        id: 7,
+        image: "assets/plane.png",
         title: 'Travel Insurance',
-        description: 'Curated travel experiences for unforgettable adventures.',
+        description: 'Curated travel experiences for unforgettable adventures with travel insurance.',
     },
 ]

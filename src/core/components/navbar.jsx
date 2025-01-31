@@ -8,7 +8,6 @@ const Navbar = () => {
                 <div className="flex items-center space-x-2 text-2xl font-bold">
                     <NavLink to="/" className="flex items-center space-x-2">
                         <img src="assets/logo.svg" alt="Logo" width={50}/>
-                        <h2>GoJaunt</h2>
                     </NavLink>
                 </div>
 
