@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import {useState, useEffect, useCallback} from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { destinations } from "@/data/destinations.js";
+import {ChevronLeft, ChevronRight} from "lucide-react";
+import {destinations} from "@/data/destinations.js";
 import MyCard from "@/core/components/myCard.jsx";
 
 export default function ExploreSection() {
@@ -11,7 +11,7 @@ export default function ExploreSection() {
         align: "center",
         skipSnaps: false,
         breakpoints: {
-            "(max-width: 767px)": { align: "start" },
+            "(max-width: 767px)": {align: "start"},
         },
     });
 
@@ -36,7 +36,7 @@ export default function ExploreSection() {
             <div className="flex flex-col sm:flex-row items-center sm:justify-between mb-8 space-y-4 sm:space-y-0">
                 <h1 className="text-3xl sm:text-6xl font-semibold text-black text-left">
                     Dive Into The Beauty
-                    <br />
+                    <br/>
                     Of The World
                 </h1>
 
@@ -45,13 +45,13 @@ export default function ExploreSection() {
                         className="text-black rounded-full hover:bg-[#3A74FF] hover:text-white p-2"
                         onClick={handlePrev}
                     >
-                        <ChevronLeft size={40} />
+                        <ChevronLeft size={40}/>
                     </button>
                     <button
                         className="bg-[#3A74FF] text-white rounded-full p-2"
                         onClick={handleNext}
                     >
-                        <ChevronRight size={40} />
+                        <ChevronRight size={40}/>
                     </button>
                 </div>
             </div>
@@ -59,15 +59,18 @@ export default function ExploreSection() {
             {/* Carousel Wrapper */}
             <div className="relative w-full mx-auto overflow-hidden">
                 {/* Fade effect on the sides */}
-                <div className="absolute top-0 left-0 w-52 h-full bg-gradient-to-r from-white to-transparent pointer-events-none hidden sm:block z-10" />
-                <div className="absolute top-0 right-0 w-52 h-full bg-gradient-to-l from-white to-transparent pointer-events-none hidden sm:block z-10" />
+                <div
+                    className="absolute top-0 left-0 w-52 h-full bg-gradient-to-r from-white to-transparent pointer-events-none hidden sm:block z-10"/>
+                <div
+                    className="absolute top-0 right-0 w-52 h-full bg-gradient-to-l from-white to-transparent pointer-events-none hidden sm:block z-10"/>
 
                 {/* Embla Carousel */}
                 <div className="embla" ref={emblaRef}>
                     <div className="embla__container flex">
                         {destinations.map((item, index) => (
-                            <div className="embla__slide flex-shrink-0 w-[80%] md:w-[50%] lg:w-[33.333%] px-2" key={index}>
-                                <MyCard title={item.title} location={item.location} image={item.image} />
+                            <div className="embla__slide flex-shrink-0 w-[80%] md:w-[50%] lg:w-[33.333%] px-2"
+                                 key={index}>
+                                <MyCard title={item.title} location={item.location} image={item.image}/>
                             </div>
                         ))}
                     </div>

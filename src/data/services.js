@@ -40,6 +40,6 @@ export const services = [
         id: 7,
         image: "assets/plane.png",
         title: 'Travel Insurance',
-        description: 'Curated travel experiences for unforgettable adventures with travel insurance.',
+        description: 'Curated travel experiences with easy travel   insurance.',
     },
 ]
