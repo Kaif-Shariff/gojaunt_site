@@ -34,7 +34,7 @@ export default function ExploreSection() {
         <section className="w-full px-4 py-8 relative">
             {/* Heading & Buttons */}
             <div className="flex flex-col sm:flex-row items-center sm:justify-between mb-8 space-y-4 sm:space-y-0">
-                <h1 className="text-3xl sm:text-6xl font-semibold text-black text-left">
+                <h1 className="text-3xl -ml-10 md:ml-8 sm:text-6xl font-semibold text-black text-left">
                     Dive Into The Beauty
                     <br/>
                     Of The World

@@ -8,27 +8,25 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog.jsx";
-import {Button} from "@/components/ui/button.jsx";
 import {email, phone} from "@/core/constant.js";
 import {useState} from "react";
 
 export default function ServiceCard({service}) {
     const [isContactOpen, setIsContactOpen] = useState(false);
 
-
     return (
         <>
             {/* The Service Card */}
-            <Card className="border border-[#E2E2E2] rounded-2xl transform scale-90 sm:scale-95 lg:scale-100">
+            <Card className="border border-[#E2E2E2] rounded-2xl transform scale-100 sm:scale-90 lg:scale-100">
                 <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-40 sm:h-48 object-contain rounded-t-2xl"
+                    className="w-full h-32 sm:h-48 object-contain rounded-t-2xl"
                 />
                 <CardContent className="p-3 sm:p-4">
-                    <h2 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{service.title}</h2>
+                    <h2 className="text-xl sm:text-xl font-semibold mb-1 sm:mb-2">{service.title}</h2>
                     <div className="flex items-center justify-between gap-4">
-                        <p className="text-gray-600 text-sm sm:text-base flex-1">{service.description}</p>
+                        <p className="text-gray-600 text-md sm:text-base flex-1">{service.description}</p>
                         <div className="text-center mt-12">
                             <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
                                 <DialogTrigger asChild>
@@ -66,8 +64,6 @@ export default function ServiceCard({service}) {
                     </div>
                 </CardContent>
             </Card>
-
-
         </>
     );
 }

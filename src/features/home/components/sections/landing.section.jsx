@@ -1,4 +1,5 @@
 import {Button} from "@/components/ui/button.jsx";
+
 const LandingSection = () => {
     return (
         <div className="mt-4 md:mt-0 md:flex md:items-center md:justify-center lg:px-2">
