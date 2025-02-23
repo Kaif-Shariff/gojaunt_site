@@ -6,8 +6,6 @@ import FlightResults from './flightresults';
 const FlightSearch = () => {
     const [flights, setFlights] = useState([]);
     const [loading, setLoading] = useState(false);
-  
-    // Temporary dummy data - Replace with actual API call
     const dummyFlights = [
       {
         id: 1,
@@ -18,17 +16,11 @@ const FlightSearch = () => {
         duration: '6h 0m',
         price: 250,
       },
-      // Add more dummy flights as needed
     ];
   
     const handleSearch = async (searchParams) => {
       setLoading(true);
       try {
-        // Replace with actual API call
-        // const response = await axios.get('/api/flights', { params: searchParams });
-        // setFlights(response.data);
-        
-        // Using dummy data for now
         setFlights(dummyFlights);
       } catch (error) {
         console.error('Error fetching flights:', error);

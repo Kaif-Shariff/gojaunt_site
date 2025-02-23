@@ -4,29 +4,29 @@
 
 @font-face {
     font-family: 'Stardom';
-    src: url('src/assets/fonts/Stardom-Regular.otf') format('truetype');
+    src: url('/fonts/Stardom-Regular.otf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('src/assets/fonts/Helvetica.ttf') format('truetype');
+    src: url('/fonts/Helvetica.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'HelveticaBold';
-    src: url('src/assets/fonts/Helvetica-Bold.ttf') format('truetype');
+    src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'HelveticaItalic';
-    src: url('src/assets/fonts/Helvetica-Italic.ttf') format('truetype');
+    src: url('/fonts/Helvetica-Italic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'HelveticaLight';
-    src: url('src/assets/fonts/Helvetica-light.ttf') format('truetype');
+    src: url('/fonts/Helvetica-light.ttf') format('truetype');
 }
 
 * {
