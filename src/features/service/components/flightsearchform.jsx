@@ -44,10 +44,10 @@ const FlightSearchForm = ({ onSearch }) => {
         <div className="space-y-2">
           <label className="text-sm font-medium">Travel Date</label>
           <DatePicker
-            selected={date}
-            onChange={(date) => setDate(date)}
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-            minDate={new Date()}
+              selected={date}
+              onChange={(date) => setDate(date)}
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+              minDate={new Date()}
           />
         </div>
 

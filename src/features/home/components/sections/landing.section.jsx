@@ -1,4 +1,4 @@
-import {Button} from "@/components/ui/button.jsx";
+import {NavLink} from "react-router-dom";
 
 const LandingSection = () => {
     return (
@@ -12,9 +12,12 @@ const LandingSection = () => {
                         Embark on a journey where every moment holds a chance for discovery. From lively city
                         streets to serene natural wonders
                     </h3>
-                    <Button className="my-4 w-36 text-md md:w-40 md:text-lg lg:mx-0 lg:px-0 lg:ml-4">
-                        Book a service
-                    </Button>
+                    <NavLink
+                        to="/services"
+                        className="bg-[#3A74FF] text-white text-center rounded-md py-2 my-4 w-36 text-md md:w-40 md:text-lg lg:mx-0 lg:ml-4"
+                    >
+                        Book a flight
+                    </NavLink>
                 </div>
             </div>
             <div className="p-4">
