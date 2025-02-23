@@ -47,5 +47,4 @@ const FlightSearch = () => {
     </div>
   );
 };
-
 export default FlightSearch;
