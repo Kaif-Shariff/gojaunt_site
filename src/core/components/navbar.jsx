@@ -1,7 +1,6 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button.jsx";
-
-import React, { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,28 +18,36 @@ const Navbar = () => {
         {/* Right: Links (Desktop) */}
         <div className="hidden md:flex items-center">
           {/* Pill-shaped container */}
-          <div className="flex items-center bg-gray-100 rounded-full px-2 py-1 space-x-2">
+          <div className="flex items-center bg-gray-100 rounded-xl py-2 px-6 space-x-2 text-[#56585E] ">
             <NavLink
               to="/"
-              className={`${buttonVariants({ variant: "ghost" })} px-4 py-2`}
+              className={`${buttonVariants({
+                variant: "ghost",
+              })} px-4 py-2 font-medium text-xl`}
             >
               Home
             </NavLink>
             <NavLink
               to="/about"
-              className={`${buttonVariants({ variant: "ghost" })} px-4 py-2`}
+              className={`${buttonVariants({
+                variant: "ghost",
+              })} px-4 py-2 font-medium text-xl`}
             >
               About
             </NavLink>
             <NavLink
               to="/services"
-              className={`${buttonVariants({ variant: "ghost" })} px-4 py-2`}
+              className={`${buttonVariants({
+                variant: "ghost",
+              })} px-4 py-2 font-medium text-xl`}
             >
               Services
             </NavLink>
             <NavLink
               to="/contact"
-              className={`${buttonVariants({ variant: "ghost" })} px-4 py-2`}
+              className={`${buttonVariants({
+                variant: "ghost",
+              })} px-4 py-2 font-medium text-xl`}
             >
               Contact
             </NavLink>
