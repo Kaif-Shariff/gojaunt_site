@@ -1,5 +1,5 @@
-import 'react-datepicker/dist/react-datepicker.css';
-import FlightSearch from '../components/FlightSearch';
+import "react-datepicker/dist/react-datepicker.css";
+import FlightSearch from "../components/FlightSearch";
 
 const ServicesPage = () => {
   return (
