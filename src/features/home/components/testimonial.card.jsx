@@ -3,7 +3,7 @@ import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 
 export default function TestimonialCard({testimonial}) {
     return (
-        <Card className="w-80 lg:w-full max-w-md m-2">
+        <Card className="w-80 max-w-md m-2">
             <CardContent className="pt-6">
                 <div className="flex items-center space-x-4">
                     <Avatar className="w-12 h-12">
