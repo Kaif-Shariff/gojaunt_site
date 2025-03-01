@@ -21,7 +21,7 @@ export default function ServiceCard({service}) {
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.5, ease: "easeOut"}}
             whileHover={{scale: 1.05}}
-            className="w-full sm:w-[320px] md:w-[350px] flex flex-col"
+            className="w-full sm:w-[300px] md:w-[300px] flex flex-col"
         >
             <Card
                 className="border border-gray-200 rounded-3xl shadow-lg overflow-hidden bg-white flex flex-col h-full">
@@ -31,7 +31,7 @@ export default function ServiceCard({service}) {
                     <img
                         src={service.image}
                         alt={service.title}
-                        className="w-28 h-28 object-contain rounded-full shadow-md"
+                        className="w-36 h-36 object-contain rounded-full shadow-md"
                     />
                 </div>
 

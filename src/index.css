@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: "Stardom";
-  src: url("/public/fonts/StardomRegular.otf") format("truetype");
+  src: url("/fonts/StardomRegular.otf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Helvetica";
-  src: url("/public/fonts/Helvetica.ttf") format("truetype");
+  src: url("/fonts/Helvetica.ttf") format("truetype");
   font-weight: 400;
 }
 
