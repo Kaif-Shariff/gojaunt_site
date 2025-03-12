@@ -19,7 +19,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Heading */}
-      <h1 className="text-center text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-[#56585E] py-8 md:py-12 lg:py-20 px-4 font-helveticaBoldl̥">
+      <h1 className="text-center text-3xl md:text-6xl lg:text-6xl xl:text-8xl font-bold text-black py-8 md:py-12 lg:py-20 px-4 font-stardom">
         At GoJaunt, we turn travel dreams into unforgettable journeys!
       </h1>
 
