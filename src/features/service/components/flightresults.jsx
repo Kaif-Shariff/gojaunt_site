@@ -2,38 +2,40 @@ import {Button} from "@/components/ui/button";
 import {Card} from "@/components/ui/card";
 import "react-datepicker/dist/react-datepicker.css";
 
-const FlightResults = ({flights}) => {
-    return (<div className="space-y-4">
-        {flights.map((flight) => (<Card key={flight.id} className="p-6">
-            <div
-                className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left gap-4">
-
-                <div className="flex justify-between w-full md:w-auto md:flex md:gap-8">
-                    <div className="text-left">
-                        <p className="text-md ">{flight.departureAirport}</p>
-                        <p className="text-sm text-gray-500 font-medium">{flight.departureTime}</p>
-                    </div>
-                    <div className="text-right">
-                        <p className="text-md ">{flight.destinationAirport}</p>
-                        <p className="text-sm text-gray-500 font-medium">{flight.arrivalTime}</p>
-                    </div>
-                </div>
-
-                <div className="flex justify-between w-full md:w-auto md:gap-4 md:space-x-28">
-                    <div className="text-center md:text-left">
-                        <p className="text-sm font-medium">{flight.duration}</p>
-                        <p className="text-xs text-gray-500">Non-stop</p>
-                    </div>
-                    <p className="md:text-lg font-bold text-primary">Rs.{flight.price}/-</p>
-                </div>
-
-                <div className="w-full md:w-auto">
-                    <Button size="sm" className="w-full md:w-auto">Book Now</Button>
-                </div>
-
+const FlightResults = ({ flights }) => {
+    return (
+      <div className="space-y-4">
+        {flights.map((visa, index) => (
+          <Card key={index} className="p-6">
+            <div className="flex flex-col md:flex-row justify-between gap-4">
+              <div>
+                <p className="text-lg font-semibold">{visa.process_name}</p>
+                <p className="text-sm text-gray-500">Purpose: {visa.purpose}</p>
+                <p className="text-sm text-gray-500">
+                  Processing Time: {visa.processing_time.duration} {visa.processing_time.unit}
+                </p>
+              </div>
+              <div>
+                <p className="text-md font-bold">Visa Fee: Rs.{visa.visa_fee.amount}/-</p>
+                <p className="text-md font-bold">Service Fee: Rs.{visa.service_fee.amount}/-</p>
+              </div>
+              <div>
+                <p className="text-sm">Documents Required:</p>
+                <ul className="text-sm text-gray-500">
+                  {visa.required_documents.map((doc, key) => (
+                    <li key={key}>{doc.label}</li>
+                  ))}
+                </ul>
+              </div>
+              <Button size="sm" className="w-full md:w-auto">
+                Apply Now
+              </Button>
             </div>
-        </Card>))}
-    </div>);
-};
-
-export default FlightResults;
+          </Card>
+        ))}
+      </div>
+    );
+  };
+  
+  export default FlightResults;
+  
