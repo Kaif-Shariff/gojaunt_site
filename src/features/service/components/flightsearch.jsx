@@ -48,7 +48,7 @@ export default function FlightSearch() {
   const getCountryCode = async (location) => {
     try {
       const response = await axios.get(
-        `https://restcountries.com/v3.1/name/${location}?fullText=true`
+        `https://restcountries.com/v3.1/name/${location.trim()}?fullText=true`
       );
       if (response.data && response.data.length > 0) {
         return response.data[0].cca2;

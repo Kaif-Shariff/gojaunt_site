@@ -108,7 +108,7 @@ const ContactPage = () => {
           >
             <iframe
               title="Our Office Location"
-              src={`https://www.google.com/maps?q=Shop+No.1%2C+152%2C+Bapu+Khote+Street+Surthiwala+building%2C+Mumbai+-+400003&output=embed`}
+              src={`https://www.google.com/maps?q=Surthiwala+building%2C+Mumbai+-+400003&output=embed`}
               width="100%"
               height="100%"
               style={{ border: 0 }}
