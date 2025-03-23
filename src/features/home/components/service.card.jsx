@@ -32,6 +32,7 @@ export default function ServiceCard({service}) {
                         src={service.image}
                         alt={service.title}
                         className="w-36 h-36 object-contain rounded-full shadow-md"
+                        loading="lazy"
                     />
                 </div>
 
