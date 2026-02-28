@@ -1,164 +1,125 @@
-import {useState} from "react";
-import {NavLink} from "react-router-dom";
-import {buttonVariants} from "@/components/ui/button.jsx";
-import {motion} from "framer-motion";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Contact", path: "/contact" },
+];
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-    return (
-        <nav className="bg-white sticky top-0 z-50 shadow-sm">
-            <div className="container mx-auto flex items-center justify-between p-4">
+  // Handle scroll for a solid background effect
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-                {/* Logo */}
-                <div className="flex items-center space-x-2 text-2xl font-bold">
-                    <NavLink to="/" className="flex items-center space-x-2">
-                        <img src="assets/logo.svg" alt="Logo" width={50}/>
-                    </NavLink>
-                </div>
+  return (
+    <nav 
+      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
+        scrolled ? "bg-white py-3 shadow-sm" : "bg-white py-5"
+      }`}
+    >
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        
+        {/* Logo Section */}
+        <NavLink to="/" className="relative z-[110] flex items-center gap-2 group">
+          <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 transition-transform duration-500 group-hover:rotate-[360deg]">
+            <img src="assets/logo.svg" alt="Logo" className="w-full h-full object-cover" />
+          </div>
+        </NavLink>
 
-                {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center">
-                    <div
-                        className="flex items-center bg-gray-100 rounded-xl py-2 px-6 space-x-2 text-[#56585E] text-lg">
-                        <NavLink
-                            to="/"
-                            className={({isActive}) =>
-                                `${buttonVariants({variant: "ghost"})} px-4 py-2 font-medium ${
-                                    isActive ? "bg-[#3A74FF] text-white rounded-lg" : ""
-                                }`
-                            }
-                        >
-                            Home
-                        </NavLink>
-                        <NavLink
-                            to="/about"
-                            className={({isActive}) =>
-                                `${buttonVariants({variant: "ghost"})} px-4 py-2 font-medium ${
-                                    isActive ? "bg-[#3A74FF] text-white rounded-lg" : ""
-                                }`
-                            }
-                        >
-                            About
-                        </NavLink>
-                        <NavLink
-                            to="/services"
-                            className={({isActive}) =>
-                                `${buttonVariants({variant: "ghost"})} px-4 py-2 font-medium ${
-                                    isActive ? "bg-[#3A74FF] text-white rounded-lg" : ""
-                                }`
-                            }
-                        >
-                            Services
-                        </NavLink>
-                        <NavLink
-                            to="/contact"
-                            className={({isActive}) =>
-                                `${buttonVariants({variant: "ghost"})} px-4 py-2 font-medium ${
-                                    isActive ? "bg-[#3A74FF] text-white rounded-lg" : ""
-                                }`
-                            }
-                        >
-                            Contact
-                        </NavLink>
-                    </div>
-                </div>
-
-                {/* Hamburger Menu (Mobile) */}
-                <button
-                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none"
-                    onClick={() => setMenuOpen(true)}
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-2">
+            {navLinks.map((link) => (
+              <li key={link.path} className="relative">
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) => `
+                    px-5 py-2 text-sm font-medium transition-colors duration-300 relative z-10
+                    ${isActive ? "text-white" : "text-gray-600 hover:text-black"}
+                  `}
                 >
-                    <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+                  {link.name}
+                  {location.pathname === link.path && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-[#3A74FF] rounded-full z-[-1]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          
+          {/* CTA Button */}
+          <button className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#3A74FF] transition-all duration-300 group">
+            Book Now
+            <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden relative z-[110] p-2"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 bg-white z-[100] flex flex-col justify-center px-10"
+          >
+            <div className="flex flex-col gap-6">
+              <span className="text-gray-400 text-sm font-mono tracking-widest uppercase">Navigation</span>
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.path}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <NavLink
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="text-5xl font-bold text-black hover:text-[#3A74FF] transition-colors"
+                  >
+                    {link.name}
+                  </NavLink>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Overlay (When Menu is Open) */}
-            {menuOpen && (
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    className="fixed inset-0 bg-black bg-opacity-40 z-40"
-                    onClick={() => setMenuOpen(false)}
-                ></motion.div>
-            )}
-
-            {/* Mobile Drawer (Fixed Height & Scroll Issue Resolved) */}
-            <motion.div
-                initial={{x: "-100%"}}
-                animate={{x: menuOpen ? "0%" : "-100%"}}
-                transition={{type: "spring", stiffness: 100, damping: 20}}
-                className="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg z-50 overflow-y-auto"
-            >
-                <div className="flex flex-col h-full p-4">
-
-                    {/* Drawer Header (Logo + Close Button) */}
-                    <div className="flex items-center justify-between">
-                        <NavLink to="/" className="flex items-center space-x-2">
-                            <img src="assets/logo.svg" alt="Logo" width={50}/>
-                        </NavLink>
-                        <button className="text-gray-600 hover:text-gray-800" onClick={() => setMenuOpen(false)}>
-                            <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                      d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* Navigation Links */}
-                    <div className="flex flex-col space-y-2 mt-6 text-lg">
-                        <NavLink
-                            to="/"
-                            className={({isActive}) =>
-                                `px-4 py-3 rounded-md transition-all ${
-                                    isActive ? "bg-[#3A74FF] text-white" : "hover:bg-gray-200"
-                                }`
-                            }
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Home
-                        </NavLink>
-                        <NavLink
-                            to="/about"
-                            className={({isActive}) =>
-                                `px-4 py-3 rounded-md transition-all ${
-                                    isActive ? "bg-[#3A74FF] text-white" : "hover:bg-gray-200"
-                                }`
-                            }
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            About
-                        </NavLink>
-                        <NavLink
-                            to="/services"
-                            className={({isActive}) =>
-                                `px-4 py-3 rounded-md transition-all ${
-                                    isActive ? "bg-[#3A74FF] text-white" : "hover:bg-gray-200"
-                                }`
-                            }
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Services
-                        </NavLink>
-                        <NavLink
-                            to="/contact"
-                            className={({isActive}) =>
-                                `px-4 py-3 rounded-md transition-all ${
-                                    isActive ? "bg-[#3A74FF] text-white" : "hover:bg-gray-200"
-                                }`
-                            }
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Contact
-                        </NavLink>
-                    </div>
-                </div>
-            </motion.div>
-        </nav>
-    );
+            <div className="mt-20 pt-10 border-t border-gray-100">
+              <p className="text-gray-500 mb-4">Follow us</p>
+              <div className="flex gap-6 font-medium">
+                <a href="#" className="hover:text-[#3A74FF]">Instagram</a>
+                <a href="#" className="hover:text-[#3A74FF]">Twitter</a>
+                <a href="#" className="hover:text-[#3A74FF]">Facebook</a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
 };
 
 export default Navbar;
