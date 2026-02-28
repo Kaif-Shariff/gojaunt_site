@@ -1,93 +1,156 @@
-import {useState, useEffect, useCallback} from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import {ChevronLeft, ChevronRight} from "lucide-react";
-import {destinations} from "@/data/destinations.js";
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import MyCard from "@/core/components/myCard.jsx";
+import { destinations } from "@/data/destinations";
 
 export default function ExploreSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-        loop: true,
-        align: "center",
-        skipSnaps: false,
-        breakpoints: {
-            "(max-width: 767px)": {align: "start"},
-        },
-    });
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
-    const handlePrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-    const handleNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
-    useEffect(() => {
-        if (!emblaApi) return;
-
-        const onSelect = () => {
-            const index = emblaApi.selectedScrollSnap();
-            setCurrentIndex(index % destinations.length);
-        };
-
-        emblaApi.on("select", onSelect);
-        return () => emblaApi.off("select", onSelect);
-    }, [emblaApi]);
-
-    return (
-        <section className="w-full px-4 py-8 relative">
-            {/* Heading & Buttons */}
-            <div className="flex flex-col sm:flex-row items-center sm:justify-between mb-8 space-y-4 sm:space-y-0">
-                <h1 className="text-3xl -ml-10 md:ml-8 sm:text-6xl font-semibold text-black text-left">
-                    Dive Into The Beauty
-                    <br/>
-                    Of The World
-                </h1>
-
-                <div className="flex gap-4 sm:gap-12">
-                    <button
-                        className="text-black rounded-full hover:bg-[#3A74FF] hover:text-white p-2"
-                        onClick={handlePrev}
-                    >
-                        <ChevronLeft size={40}/>
-                    </button>
-                    <button
-                        className="bg-[#3A74FF] text-white rounded-full p-2"
-                        onClick={handleNext}
-                    >
-                        <ChevronRight size={40}/>
-                    </button>
-                </div>
+  return (
+    <section className="w-full py-16 md:py-24 bg-white select-none">
+      <div className="max-w-[2400px] mx-auto px-2">
+        {/* Header Section */}
+        <div className="mb-14 md:mb-20 px-4 md:px-10">
+          <div className="flex items-end justify-between gap-6">
+            {/* Left – Title */}
+            <div className="flex-1">
+              <h1
+                className="
+        text-[1.32rem] 
+        sm:text-2xl 
+        md:text-5xl 
+        lg:text-6xl 
+        xl:text-7xl
+        font-black
+        md:font-semibold 
+        text-black 
+        tracking-tight 
+        leading-[1.1]
+      "
+              >
+                Dive Into The Beauty Of The World
+              </h1>
             </div>
 
-            {/* Carousel Wrapper */}
-            <div className="relative w-full mx-auto overflow-hidden">
-                {/* Fade effect on the sides */}
-                <div
-                    className="absolute top-0 left-0 w-52 h-full bg-gradient-to-r from-white to-transparent pointer-events-none hidden sm:block z-10"/>
-                <div
-                    className="absolute top-0 right-0 w-52 h-full bg-gradient-to-l from-white to-transparent pointer-events-none hidden sm:block z-10"/>
+            {/* Right – Navigation */}
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+              <button
+                ref={prevRef}
+                className="
+          w-10 h-10 
+          sm:w-12 sm:h-12 
+          md:w-14 md:h-14
+          rounded-full
+          border border-gray-200
+          flex items-center justify-center
+          text-black
+          hover:bg-[#3A74FF]
+          hover:text-white
+          transition-all duration-300
+          shadow-sm hover:shadow-md
+          disabled:opacity-30
+        "
+              >
+                <ChevronLeft
+                  size={20}
+                  className="sm:w-6 sm:h-6 md:w-7 md:h-7"
+                />
+              </button>
 
-                {/* Embla Carousel */}
-                <div className="embla" ref={emblaRef}>
-                    <div className="embla__container flex">
-                        {destinations.map((item, index) => (
-                            <div className="embla__slide flex-shrink-0 w-[80%] md:w-[50%] lg:w-[33.333%] px-2"
-                                 key={index}>
-                                <MyCard title={item.title} location={item.location} image={item.image}/>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+              <button
+                ref={nextRef}
+                className="
+          w-10 h-10 
+          sm:w-12 sm:h-12 
+          md:w-14 md:h-14
+          rounded-full
+          bg-[#3A74FF]
+          flex items-center justify-center
+          text-white
+          hover:bg-blue-600
+          transition-all duration-300
+          shadow-md hover:shadow-lg
+          disabled:opacity-30
+        "
+              >
+                <ChevronRight
+                  size={20}
+                  className="sm:w-6 sm:h-6 md:w-7 md:h-7"
+                />
+              </button>
             </div>
+          </div>
+        </div>
 
-            {/* Pagination Dots */}
-            <div className="flex justify-center mt-4 gap-2">
-                {destinations.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                            index === currentIndex ? "bg-[#3A74FF]" : "bg-gray-300"
-                        }`}
-                    />
-                ))}
-            </div>
-        </section>
-    );
+        {/* Carousel Wrapper */}
+        <div className="relative group px-4 md:px-10">
+          {/* Ethereal Mist Effect - Left */}
+          <div
+            className="absolute top-0 left-0 z-20 h-full pointer-events-none 
+    w-12 md:w-32 lg:w-48 xl:w-64
+    bg-gradient-to-r from-white via-white/60 via-white/20 to-transparent 
+    backdrop-blur-[1px]"
+          />
+
+          {/* Ethereal Mist Effect - Right */}
+          <div
+            className="absolute top-0 right-0 z-20 h-full pointer-events-none 
+    w-12 md:w-32 lg:w-48 xl:w-64
+    bg-gradient-to-l from-white via-white/60 via-white/20 to-transparent 
+    backdrop-blur-[1px]"
+          />
+
+          <Swiper
+            modules={[Navigation, Pagination, FreeMode]}
+            onInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+            spaceBetween={20}
+            slidesPerView={1.2}
+            freeMode={true}
+            loop={true}
+            breakpoints={{
+              640: { slidesPerView: 2.2, spaceBetween: 25 },
+              1024: { slidesPerView: 3, spaceBetween: 30 },
+              1440: { slidesPerView: 4, spaceBetween: 35 },
+            }}
+            className="overflow-visible"
+          >
+            {destinations.map((item) => (
+              <SwiperSlide key={item.id} className="pb-4">
+                <MyCard
+                  title={item.title}
+                  location={item.location}
+                  image={item.image}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+
+      <style>{`
+        .swiper-pagination-progressbar {
+          background: rgba(0, 0, 0, 0.05) !important;
+          height: 2px !important;
+          bottom: 0 !important;
+          top: auto !important;
+        }
+        .swiper-pagination-progressbar-fill {
+          background: #3a74ff !important;
+        }
+      `}</style>
+    </section>
+  );
 }
