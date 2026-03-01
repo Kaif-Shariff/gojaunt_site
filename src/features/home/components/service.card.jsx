@@ -6,19 +6,9 @@ import { email, phone } from "@/core/constant.js";
 export default function ServiceCard({ service, index }) {
     const [isContactOpen, setIsContactOpen] = useState(false);
 
-    const imageUrls = {
-        1: "https://images.unsplash.com/photo-1576737064520-f45d313d17ff?q=80&w=688&auto=format&fit=crop",
-        2: "https://images.unsplash.com/photo-1685858875697-0759165f85e3?q=80&w=687&auto=format&fit=crop",
-        3: "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&q=80&w=800",
-        4: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800",
-        5: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800",
-        6: "https://images.unsplash.com/photo-1517840901100-8179e982acb7?auto=format&fit=crop&q=80&w=800",
-        7: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&q=80&w=800",
-    };
-
     return (
         <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
-            <div className="group relative aspect-[4/5] border-r border-b border-gray-200 bg-white overflow-hidden flex flex-col transition-all duration-500 hover:bg-black cursor-pointer">
+            <div className="group relative aspect-[4/5] border-[0.5px] border-gray-200 bg-white overflow-hidden flex flex-col transition-all duration-500 hover:bg-black cursor-pointer">
 
                 {/* Invisible Click Layer */}
                 <button
@@ -30,7 +20,7 @@ export default function ServiceCard({ service, index }) {
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-all duration-700 scale-110 group-hover:scale-100 ease-out z-0">
                     <img
-                        src={imageUrls[service.id]}
+                        src={service.image}
                         alt={service.title}
                         className="w-full h-full object-cover"
                     />

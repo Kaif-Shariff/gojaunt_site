@@ -8,7 +8,7 @@ export default function TestimonialSection() {
     const secondRow = testimonials.slice(half);
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-6 mb-16">
                 <div className="mb-16 md:mb-24 max-w-5xl">
 
@@ -46,7 +46,7 @@ export default function TestimonialSection() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-6 md:gap-10">
+            <div className="flex flex-col gap-6 md:gap-10 mx-auto max-w-[1250px]">
                 <Marquee speed={50} gradient={false} pauseOnHover={true}>
                     {firstRow.map((testimonial, index) => (
                         <TestimonialCard key={`row1-${index}`} testimonial={testimonial} />

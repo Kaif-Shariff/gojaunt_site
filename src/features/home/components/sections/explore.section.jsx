@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, FreeMode } from "swiper/modules";
 import "swiper/css";
@@ -24,7 +24,7 @@ export default function ExploreSection() {
             <div className="flex-1">
               <h1
                 className="
-        text-[1.32rem] 
+        text-[2.2rem]
         sm:text-2xl 
         md:text-5xl 
         lg:text-6xl 
@@ -36,16 +36,16 @@ export default function ExploreSection() {
         leading-[1.1]
       "
               >
-                Dive Into The Beauty Of The World
+                Explore The World
               </h1>
             </div>
 
             {/* Right – Navigation */}
-            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0 ">
               <button
                 ref={prevRef}
                 className="
-          w-10 h-10 
+          w-8 h-8
           sm:w-12 sm:h-12 
           md:w-14 md:h-14
           rounded-full
@@ -61,14 +61,14 @@ export default function ExploreSection() {
               >
                 <ChevronLeft
                   size={20}
-                  className="sm:w-6 sm:h-6 md:w-7 md:h-7"
+                  className="w-4 sm:w-6 sm:h-6 md:w-7 md:h-7"
                 />
               </button>
 
               <button
                 ref={nextRef}
                 className="
-          w-10 h-10 
+          w-8 h-8
           sm:w-12 sm:h-12 
           md:w-14 md:h-14
           rounded-full
@@ -83,7 +83,7 @@ export default function ExploreSection() {
               >
                 <ChevronRight
                   size={20}
-                  className="sm:w-6 sm:h-6 md:w-7 md:h-7"
+                  className="w-4 sm:w-6 sm:h-6 md:w-7 md:h-7"
                 />
               </button>
             </div>

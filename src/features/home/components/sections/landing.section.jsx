@@ -60,7 +60,6 @@ const LandingSection = () => {
                 <div className="absolute inset-0 rounded-[2.5rem] md:rounded-[5rem] ring-1 ring-black/5" />
               </div>
 
-              {/* Floating Stat Card */}
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
