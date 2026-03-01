@@ -5,7 +5,6 @@ export const footerSections = [
         title: "Navigation",
         links: [
             {text: "Home", to: "/"},
-            {text: "About", to: "/about"},
             {text: "Service", to: "/services"},
             {text: "Contact", to: "/contact"},
         ],
