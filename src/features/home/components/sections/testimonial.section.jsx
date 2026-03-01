@@ -1,96 +1,69 @@
-import TestimonialCard from "@/features/home/components/testimonial.card.jsx";
-import {testimonials} from "@/data/testimonial.js";
 import Marquee from "react-fast-marquee";
-
-const desktopCol1 = testimonials.filter((_, i) => i % 3 === 0);
-const desktopCol2 = testimonials.filter((_, i) => i % 3 === 1);
-const desktopCol3 = testimonials.filter((_, i) => i % 3 === 2);
-
-const mobileRow1 = testimonials.filter((_, i) => i % 3 === 0);
-const mobileRow2 = testimonials.filter((_, i) => i % 3 === 1);
-const mobileRow3 = testimonials.filter((_, i) => i % 3 === 2);
+import TestimonialCard from "@/features/home/components/testimonial.card.jsx";
+import { testimonials } from "@/data/testimonial.js";
 
 export default function TestimonialSection() {
+    const half = Math.ceil(testimonials.length / 2);
+    const firstRow = testimonials.slice(0, half);
+    const secondRow = testimonials.slice(half);
+
     return (
-        <section className="py-4 overflow-hidden">
-            <div className="container mx-auto px-4">
-                <h1 className="text-3xl sm:text-6xl font-semibold text-black mb-8 lg:w-[50rem]">
-                    What Our Customers Says About Us
-                </h1>
+        <section className="py-24 bg-white overflow-hidden">
+            <div className="container mx-auto px-6 mb-16">
+                <div className="mb-16 md:mb-24 max-w-5xl">
 
-                {/* Desktop View */}
-                <div className="hidden md:flex gap-2 justify-between"> {/* Reduced gap */}
-                    {/* Columns 1-3 */}
-                    {[desktopCol1, desktopCol2, desktopCol3].map((column, colIndex) => (
-                        <div
-                            key={colIndex}
-                            className="w-1/3 overflow-hidden relative"
-                            style={{height: "400px"}}
-                        >
-                            <Marquee
-                                pauseOnHover
-                                speed={60} // Increased speed
-                                direction="left"
-                                style={{
-                                    transform: colIndex === 1 ? "rotate(-90deg)" : "rotate(90deg)",
-                                    overflow: "visible",
-                                    width: "400px", // Match container height
-                                    height: "var(--card-width)" // Add CSS variable for card width
-                                }}
-                            >
-                                {/* Duplicate cards for seamless loop */}
-                                {[...column, ...column].map((testimonial, index) => (
-                                    <div
-                                        key={index}
-                                        style={{
-                                            transform: colIndex === 1 ? "rotate(90deg)" : "rotate(-90deg)",
-                                            display: "inline-block",
-                                            margin: "0 -2px", // Negative margin to reduce gap
-                                            padding: "0",
-                                            verticalAlign: "top"
-                                        }}
-                                    >
-                                        <TestimonialCard
-                                            testimonial={testimonial}
-                                            className="mx-0" // Remove horizontal margin
-                                        />
-                                    </div>
-                                ))}
-                            </Marquee>
-                        </div>
+                    <h2 className="
+                        text-[2.2rem]
+        sm:text-2xl
+        md:text-5xl
+        lg:text-6xl
+        xl:text-7xl
+        font-black
+        md:font-semibold
+        text-black
+        tracking-tight
+        leading-[1.1]
+                    ">
+                        Client Stories
+                    </h2>
+
+                    <p className="
+                         text-[1rem]
+        sm:text-xl
+        md:text-3xl
+        lg:text-3xl
+        xl:text-5xl
+        font-black
+        md:font-semibold
+        text-gray-500
+        tracking-tight
+        leading-[1.1]
+        mt-3
+                    ">
+                        Building trust through seamless journeys and unforgettable global adventures
+                    </p>
+
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-6 md:gap-10">
+                <Marquee speed={50} gradient={false} pauseOnHover={true}>
+                    {firstRow.map((testimonial, index) => (
+                        <TestimonialCard key={`row1-${index}`} testimonial={testimonial} />
                     ))}
-                </div>
+                    {firstRow.map((testimonial, index) => (
+                        <TestimonialCard key={`row1-dup-${index}`} testimonial={testimonial} />
+                    ))}
+                </Marquee>
 
-
-                {/* Mobile View */}
-                <div className="md:hidden flex flex-col gap-4">
-                    {/* Row 1: Right-to-left */}
-                    <div className="w-full overflow-hidden">
-                        <Marquee gradient={false} pauseOnHover speed={30} direction="right">
-                            {mobileRow1.map((testimonial, index) => (
-                                <TestimonialCard key={index} testimonial={testimonial}/>
-                            ))}
-                        </Marquee>
-                    </div>
-
-                    {/* Row 2: Left-to-right */}
-                    <div className="w-full overflow-hidden">
-                        <Marquee gradient={false} pauseOnHover speed={30} direction="left">
-                            {mobileRow2.map((testimonial, index) => (
-                                <TestimonialCard key={index} testimonial={testimonial}/>
-                            ))}
-                        </Marquee>
-                    </div>
-
-                    {/* Row 3: Right-to-left */}
-                    <div className="w-full overflow-hidden">
-                        <Marquee gradient={false} pauseOnHover speed={30} direction="right">
-                            {mobileRow3.map((testimonial, index) => (
-                                <TestimonialCard key={index} testimonial={testimonial}/>
-                            ))}
-                        </Marquee>
-                    </div>
-                </div>
+                <Marquee speed={50} gradient={false} direction="right" pauseOnHover={true}>
+                    {secondRow.map((testimonial, index) => (
+                        <TestimonialCard key={`row2-${index}`} testimonial={testimonial} />
+                    ))}
+                    {secondRow.map((testimonial, index) => (
+                        <TestimonialCard key={`row2-dup-${index}`} testimonial={testimonial} />
+                    ))}
+                </Marquee>
             </div>
         </section>
     );

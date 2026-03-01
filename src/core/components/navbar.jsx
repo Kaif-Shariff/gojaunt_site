@@ -29,11 +29,21 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
-        
-        {/* Logo Section */}
-        <NavLink to="/" className="relative z-[110] flex items-center gap-2 group">
-          <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 transition-transform duration-500 group-hover:rotate-[360deg]">
-            <img src="assets/logo.svg" alt="Logo" className="w-full h-full object-cover" />
+
+        {/* Logo */}
+        <NavLink to="/" className="relative z-[110] group">
+          <div
+              className="
+      w-12 h-12 rounded-full overflow-hidden
+      transition-all duration-500
+      group-hover:shadow-[0_0_35px_rgba(58,116,255,0.65)]
+    "
+          >
+            <img
+                src="assets/logo.svg"
+                alt="Logo"
+                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+            />
           </div>
         </NavLink>
 
@@ -61,12 +71,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          
-          {/* CTA Button */}
-          <button className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#3A74FF] transition-all duration-300 group">
-            Book Now
-            <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
         </div>
 
         {/* Mobile Toggle */}

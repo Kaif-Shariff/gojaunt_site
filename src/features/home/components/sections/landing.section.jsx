@@ -5,15 +5,13 @@ const LandingSection = () => {
   return (
     <section className="relative w-full min-h-screen pt-24 pb-12 lg:pt-0 flex items-center bg-white overflow-hidden">
       <div className="max-w-[2000px] mx-auto px-6 md:px-16 w-full">
-        {/* Mobile: Images top (reverse), Text bottom | Desktop: Side by side */}
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-10">
           
-          {/* LEFT CONTENT: Text Section */}
           <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left">
             <h1
               className="font-stardom font-semibold leading-[1.05] tracking-tight text-black
-              text-[2.2rem] sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[6.5rem]
-              max-w-[15ch] sm:max-w-[18ch] md:max-w-[16ch] lg:max-w-[15ch]"
+              text-[1.8rem] sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[4rem]
+             "
             >
               Gojaunt, where Every Journey Brings Joy
             </h1>
@@ -40,16 +38,14 @@ const LandingSection = () => {
             </NavLink>
           </div>
 
-          {/* RIGHT CONTENT: Image Composition Section */}
+          {/*right*/}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="w-full lg:w-[45%] relative flex justify-center lg:justify-end"
+            className="w-full lg:w-[45%] relative flex justify-center lg:justify-end -mt-14"
           >
-            {/* Scaled container for better tablet/laptop fitting */}
             <div className="relative flex items-start gap-4 md:gap-6 scale-90 sm:scale-100 lg:scale-90 xl:scale-100">
-              {/* Primary Image */}
               <div
                 className="w-48 h-[18rem] sm:w-64 sm:h-[28rem] md:w-80 md:h-[36rem] bg-cover bg-center rounded-[2.5rem] md:rounded-[5rem] shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-700"
                 style={{ backgroundImage: "url('assets/eiffelTower.jpg')" }}
@@ -57,7 +53,6 @@ const LandingSection = () => {
                 <div className="absolute inset-0 rounded-[2.5rem] md:rounded-[5rem] ring-1 ring-black/5" />
               </div>
 
-              {/* Secondary Image */}
               <div
                 className="w-40 h-[14rem] sm:w-56 sm:h-[22rem] md:w-72 md:h-[28rem] bg-cover bg-center rounded-[2.5rem] md:rounded-[5rem] shadow-2xl mt-16 sm:mt-24 md:mt-32 -ml-10 sm:-ml-12 md:-ml-20 transform rotate-6 hover:rotate-0 transition-transform duration-700 border-4 md:border-8 border-white"
                 style={{ backgroundImage: "url('assets/bigBen.jpg')" }}
