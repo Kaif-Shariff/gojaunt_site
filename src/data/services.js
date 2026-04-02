@@ -2,7 +2,7 @@ import flight from "../assets/services/flight.jpg";
 import train from "../assets/services/train.jpg";
 import visa from "../assets/services/visa.jpg";
 import travel from "../assets/services/travel.jpg";
-import car from "../assets/services/car.jpg";
+
 import hotel from "../assets/services/hotel.jpg";
 import insurance from "../assets/services/insurance.jpg";
 
@@ -30,12 +30,6 @@ export const services = [
         image: travel,
         title: 'Travel Packages',
         description: 'Tailored Tours for Every Traveler',
-    },
-    {
-        id: 5,
-        image: car,
-        title: 'Car Rental Service',
-        description: 'Affordable car rentals for carefree exploration',
     },
     {
         id: 6,

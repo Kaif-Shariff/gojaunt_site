@@ -26,7 +26,7 @@ const LandingSection = () => {
             </h3>
 
             <NavLink
-              to="/services"
+              to="/"
               className="group relative flex items-center gap-6 bg-black text-white mt-8 lg:mt-10 pl-6 pr-2 py-2 rounded-full transition-all duration-500 hover:bg-[#3A74FF]"
             >
               <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em]">

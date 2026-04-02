@@ -3,11 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Book", path: "/services" },
-  { name: "Contact", path: "/contact" },
-];
+const navLinks = [{ name: "Contact", path: "/" }];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,26 +18,25 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
         scrolled ? "bg-white py-3 shadow-sm" : "bg-white py-5"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
-
         {/* Logo */}
         <NavLink to="/" className="relative z-[110] group">
           <div
-              className="
+            className="
       w-12 h-12 rounded-full overflow-hidden
       transition-all duration-500
       group-hover:shadow-[0_0_35px_rgba(58,116,255,0.65)]
     "
           >
             <img
-                src="assets/logo.svg"
-                alt="Logo"
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+              src="assets/logo.svg"
+              alt="Logo"
+              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
             />
           </div>
         </NavLink>
@@ -63,7 +58,11 @@ const Navbar = () => {
                     <motion.div
                       layoutId="nav-pill"
                       className="absolute inset-0 bg-[#3A74FF] rounded-full z-[-1]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </NavLink>
@@ -73,7 +72,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden relative z-[110] p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -91,7 +90,9 @@ const Navbar = () => {
             className="fixed inset-0 bg-white z-[100] flex flex-col justify-center px-10"
           >
             <div className="flex flex-col gap-6">
-              <span className="text-gray-400 text-sm font-mono tracking-widest uppercase">Navigation</span>
+              <span className="text-gray-400 text-sm font-mono tracking-widest uppercase">
+                Navigation
+              </span>
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}
@@ -113,9 +114,15 @@ const Navbar = () => {
             <div className="mt-20 pt-10 border-t border-gray-100">
               <p className="text-gray-500 mb-4">Follow us</p>
               <div className="flex gap-6 font-medium">
-                <a href="#" className="hover:text-[#3A74FF]">Instagram</a>
-                <a href="#" className="hover:text-[#3A74FF]">Twitter</a>
-                <a href="#" className="hover:text-[#3A74FF]">Facebook</a>
+                <a href="#" className="hover:text-[#3A74FF]">
+                  Instagram
+                </a>
+                <a href="#" className="hover:text-[#3A74FF]">
+                  Twitter
+                </a>
+                <a href="#" className="hover:text-[#3A74FF]">
+                  Facebook
+                </a>
               </div>
             </div>
           </motion.div>
